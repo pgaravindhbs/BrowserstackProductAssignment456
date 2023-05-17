@@ -11,7 +11,7 @@ pipeline {
         stage('Execute Step 1') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                sh 'python testcases/test_step4.py'
+                sh 'pytest testcases/test_step4.py'
                 
             
             }
