@@ -11,7 +11,7 @@ pipeline {
       
         stage('Execute Step 5 UC1') {
             steps {
-
+                sh 'python3.10 -m pip install pytest'
                 sh 'browserstack-sdk pytest testcases/test_step5_uc1.py'
                 
             
