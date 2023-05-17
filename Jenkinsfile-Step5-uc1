@@ -12,7 +12,7 @@ pipeline {
         stage('Execute Step 5 UC1') {
             steps {
 
-                sh 'browserstack-sdk pytest testcases/test_step5_uc1.py'
+                sh 'browserstack-sdk python -m pytest testcases/test_step5_uc1.py'
                 
             
             }
