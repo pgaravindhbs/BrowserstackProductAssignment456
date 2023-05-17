@@ -8,7 +8,7 @@ pipeline {
         
     }   
     stages {
-        stage('Execute Step 1') {
+        stage('Execute Step 4') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 sh 'pytest testcases/test_step4.py -n=2'    
