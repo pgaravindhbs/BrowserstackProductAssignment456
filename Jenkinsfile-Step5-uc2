@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    environment {
+        BROWSERSTACK_USERNAME = credentials('BROWSERSTACK_USERNAME')
+        BROWSERSTACK_ACCESS_KEY = credentials('BROWSERSTACK_ACCESS_KEY')
+        browserstacktempusername1 = credentials('browserstacktempusername1')
+        browserstacktemppassword1 = credentials('browserstacktemppassword1')
+        
+    }   
+    stages {
+      
+        stage('Execute Step 5 UC2') {
+            steps {
+                sh 'python3 -m venv env'
+                sh 'source env/bin/activate'
+                sh  'pip3 install -r requirements.txt'
+                sh 'browserstack-sdk pytest testcases/test_step5_uc2.py'
+                
+            
+            }
+        }
+    }
+}
