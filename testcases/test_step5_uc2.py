@@ -18,11 +18,11 @@ print("All Modules are loaded")
 
 def setup_browser_driver(browser):
     print("Now testing for the combination of", browser)
-    desired_caps = {'browserName': browser}
+    # desired_caps = {'browserName': browser}
     URL = 'http://localhost:4444/wd/hub'
     if browser == "chrome":
-        options = selenium.webdriver.chrome.options.Options()
-        options.add_experimental_option("detach", True)
+        options = selenium.webdriver.IeOptions()
+
 
     elif browser == "firefox":
         options = selenium.webdriver.firefox.options.Options()
@@ -34,7 +34,7 @@ def setup_browser_driver(browser):
         options = selenium.webdriver.chrome.options.Options()
         print("We are initiating chrome as the default browser if no input is provided correctly")
 
-    driver = webdriver.Remote(command_executor=URL,desired_capabilities=desired_caps, options=options)
+    driver = webdriver.Remote(command_executor=URL, options=options)
     print("This", browser, "has been initiated")
     return driver
 
@@ -87,7 +87,7 @@ def login_bstack(driver):
     # ,('firefox')
     # ,('safari')
 ])
-def test_step4(browser):
+def test_step5(browser):
     print("# Test case -", browser)
     # below command sets up the browser and defaultProfile
     driver = setup_browser_driver(browser)
