@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    environment {
+        BROWSERSTACK_USERNAME = credentials('BROWSERSTACK_USERNAME')
+        BROWSERSTACK_ACCESS_KEY = credentials('BROWSERSTACK_ACCESS_KEY')
+        browserstacktempusername1 = credentials('browserstacktempusername1')
+        browserstacktemppassword1 = credentials('browserstacktemppassword1')
+        
+    }   
+    stages {
+        stage('Execute Step 1') {
+            steps {
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                sh 'python testcases/test_step4.py'
+                
+            
+            }
+        }
+    }
+}
