@@ -50,7 +50,26 @@ platforms:
     osVersion: Big Sur
     browserName: Safari
     browserVersion: latest
-
+  - os: OS X
+    osVersion: Big Sur
+    browserName: Chrome
+    browserVersion: latest
+  - os: Windows
+    osVersion: 10
+    browserName: Edge
+    browserVersion: latest
+  - os: Windows
+    osVersion: 10
+    browserName: IE
+    browserVersion: latest
+  - os: OS X
+    osVersion: Big Sur
+    browserName: Firefox
+    browserVersion: latest
+  - os: OS X
+    osVersion: Big Sur
+    browserName: Safari
+    browserVersion: latest
 # =======================
 # Parallels per Platform
 # =======================
