@@ -102,8 +102,8 @@ def login_bstack(driver):
     # topics "value_A" and "value_B" of the test and will
     # generate a stand-alone test case.
     ('chrome', 'yes')
+     ,('safari', 'no')
     ,('firefox', 'yes')
-    ,('safari', 'no')
 ])
 def test_step4(browser, defaultProfile):
     print("# Test case -", browser, "-", defaultProfile)
