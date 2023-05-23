@@ -11,8 +11,10 @@ pipeline {
       
         stage('Execute Step 5 UC1') {
             steps {
-
-                sh 'browserstack-sdk python -m pytest testcases/test_step5_uc1.py'
+                sh 'python3 -m venv env'
+                sh 'source env/bin/activate'
+                sh  'pip3 install -r requirements.txt'
+                sh 'browserstack-sdk pytest testcases/test_step5_uc1.py'
                 
             
             }
